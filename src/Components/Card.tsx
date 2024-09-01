@@ -2,7 +2,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { ShoppingCart, NotepadText } from "lucide-react";
 import Link from "./Link";
 
@@ -30,9 +30,9 @@ export default function ProductCard() {
         </Box>
       </CardContent>
       <CardActions style={{ justifyContent: "space-between" }}>
-        <Link variant="contained" startIcon={<ShoppingCart />}>
+        <Button variant="contained" startIcon={<ShoppingCart />}>
           Add to Cart
-        </Link>
+        </Button>
         <Link variant="contained" startIcon={<NotepadText />}>
           Add to Cart
         </Link>
