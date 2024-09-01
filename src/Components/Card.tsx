@@ -1,30 +1,41 @@
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import { Box } from "@mui/material";
+import { ShoppingCart, NotepadText } from "lucide-react";
+import Link from "./Link";
 
 export default function ProductCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+    <Card sx={{ maxWidth: 350 }}>
+      <Box width="350px" height="350px">
+        <img
+          style={{ width: "100%", height: "100%" }}
+          src="/Photos/iPhone-14-view-1.webp"
+          alt=""
+        />
+      </Box>
+      <CardContent style={{ paddingBottom: "8px" }}>
+        <Typography fontWeight="bold" gutterBottom variant="h5" component="div">
+          iPhone 14
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography>
+        <Box display="flex" justifyContent="space-between" marginTop="8.4px">
+          <Box>Price:</Box>
+          <Box>Catagory</Box>
+        </Box>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+      <CardActions style={{ justifyContent: "space-between" }}>
+        <Link variant="contained" startIcon={<ShoppingCart />}>
+          Add to Cart
+        </Link>
+        <Link variant="contained" startIcon={<NotepadText />}>
+          Add to Cart
+        </Link>
       </CardActions>
     </Card>
   );
