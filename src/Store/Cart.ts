@@ -1,13 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Product } from "../interfaces/interfaces";
-const initialState: { products: [] | Product[] } = {
+import { ProductCart } from "../interfaces/interfaces";
+const initialState: { products: [] | ProductCart[] } = {
   products: [],
 };
 export const Cart = createSlice({
   name: "Cart",
   initialState,
   reducers: {
-    addOrRemoveProductsFromCart: (state, action: PayloadAction<[] | Product[]>) => {
+    addOrRemoveProductsFromCart: (
+      state,
+      action: PayloadAction<[] | ProductCart[]>
+    ) => {
       state.products = action.payload;
     },
   },

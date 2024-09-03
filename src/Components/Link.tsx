@@ -9,7 +9,6 @@ const LinkBehavior = React.forwardRef<
   Omit<LinkProps, "to"> & { href: LinkProps["to"] }
 >((props, ref) => {
   const { href, ...other } = props;
-  console.log(props);
   // we passed the ref to allow the parent component to controll this compontent
   return <NavLink to={href} ref={ref} {...other} />;
 });
