@@ -6,7 +6,7 @@ function Content() {
     <Grid2
       display={"grid"}
       container
-      gap="15px"
+      gap="1px"
       gridTemplateColumns={"repeat(auto-fill, minmax(350px, 1fr))"}
     >
       <ProductCard />

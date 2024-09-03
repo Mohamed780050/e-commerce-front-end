@@ -7,6 +7,7 @@ import { ShoppingCart, NotepadText } from "lucide-react";
 import Link from "./Link";
 import useAuthentcatedQueery from "../Hooks/useAthuntacted";
 import { Product } from "../interfaces/interfaces";
+import CardSkeleton from "./Skeleton";
 
 export default function ProductCard() {
   const { data, isLoading } = useAuthentcatedQueery({
@@ -16,9 +17,11 @@ export default function ProductCard() {
   const MyData: { Products: Product[] } = data;
   return (
     <>
-      {isLoading
-        ? "Loading"
-        : MyData.Products.map((product: Product) => (
+      {isLoading ? (
+        <CardSkeleton />
+      ) : (
+        MyData.Products.map((product: Product) => (
+          <Box p="5px">
             <Card key={product.id}>
               <Box minWidth="350px" minHeight="350px">
                 <img
@@ -51,7 +54,12 @@ export default function ProductCard() {
                   <Box>Catagory</Box>
                 </Box>
               </CardContent>
-              <CardActions style={{ justifyContent: "space-between" }}>
+              <CardActions
+                style={{
+                  justifyContent: "space-between",
+                  paddingBottom: "20px",
+                }}
+              >
                 <Button variant="contained" startIcon={<ShoppingCart />}>
                   Add to Cart
                 </Button>
@@ -60,7 +68,9 @@ export default function ProductCard() {
                 </Link>
               </CardActions>
             </Card>
-          ))}
+          </Box>
+        ))
+      )}
     </>
   );
 }
