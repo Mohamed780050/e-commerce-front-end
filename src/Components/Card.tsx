@@ -15,14 +15,15 @@ export default function ProductCard() {
     url: "/products",
   });
   const MyData: { Products: Product[] } = data;
+  console.log(MyData);
   return (
     <>
       {isLoading ? (
         <CardSkeleton />
       ) : (
         MyData.Products.map((product: Product) => (
-          <Box p="5px">
-            <Card key={product.id}>
+          <Box>
+            <Card key={product._id}>
               <Box minWidth="350px" minHeight="350px">
                 <img
                   style={{ width: "100%", height: "100%" }}
@@ -64,7 +65,7 @@ export default function ProductCard() {
                   Add to Cart
                 </Button>
                 <Link
-                  id={`${product.id}`}
+                  id={`${product._id}`}
                   variant="contained"
                   startIcon={<NotepadText />}
                 >

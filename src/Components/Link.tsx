@@ -26,10 +26,10 @@ function Link({
 }) {
   return (
     <Button
-      component={LinkBehavior}
+    component={LinkBehavior}
       startIcon={startIcon}
       variant={variant}
-      href={`/products/:${id}`}
+      href={`/products/${id}`}
     >
       {children}
     </Button>

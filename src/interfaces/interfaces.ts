@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from "axios";
 
 export interface ProductCart {
-  id: string;
+  _id: string;
   title: string;
   price: number;
   descrption: string;
@@ -13,7 +13,7 @@ export interface ProductCart {
   amount: number;
 }
 export interface Product {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   price: number;
