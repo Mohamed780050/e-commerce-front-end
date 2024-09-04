@@ -63,7 +63,11 @@ export default function ProductCard() {
                 <Button variant="contained" startIcon={<ShoppingCart />}>
                   Add to Cart
                 </Button>
-                <Link variant="contained" startIcon={<NotepadText />}>
+                <Link
+                  id={`${product.id}`}
+                  variant="contained"
+                  startIcon={<NotepadText />}
+                >
                   show Details
                 </Link>
               </CardActions>

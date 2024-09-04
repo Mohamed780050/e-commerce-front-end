@@ -17,17 +17,19 @@ function Link({
   children,
   startIcon,
   variant,
+  id
 }: {
   children: string;
   startIcon: ReactNode;
   variant?: "contained" | "outlined" | "text";
+  id:string
 }) {
   return (
     <Button
       component={LinkBehavior}
       startIcon={startIcon}
       variant={variant}
-      href="/"
+      href={`/products/:${id}`}
     >
       {children}
     </Button>
